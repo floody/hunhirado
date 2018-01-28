@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " hu" }}">
+
+{% include head.html %}
+
+<body>
+<div id="maincontainer">
+
+    {% include header.html %}
+
+    <div id="info_sav">
+
+        <div id="zene_holder">
+            <object type="application/x-shockwave-flash" name="audioplayer_1"
+                    style="outline-style: none; outline-width: initial; outline-color: initial; visibility: visible; "
+                    data="Hunh%C3%ADrad%C3%B3_elemei/player.swf" id="audioplayer_1" width="274" height="24">
+                <param name="bgcolor" value="#FFFFFF">
+                <param name="wmode" value="transparent">
+                <param name="menu" value="false">
+                <param name="flashvars" value="soundFile=zene/hazamreszlet.mp3&amp;playerID=audioplayer_1">
+            </object>
+            <script type="text/javascript">
+                AudioPlayer.embed("audioplayer_1", {soundFile: "zene/hazamreszlet.mp3", transparentpagebg: "yes"});
+            </script>
+        </div>
+        <div class="sep">&nbsp;</div>
+        <div id="datum_nevnap">
+            <center><a title="2018. 01. 27.">2018. 01. 27.</a></center>
+        </div>
+        <div class="sep">&nbsp;</div>
+        <div id="idojaras_holder">
+            <div id="idojaras_sav" style="">
+                <!--<img " alt="" class="ikon" />-->
+                <img src="{{ "/assets/33.gif" | relative_url }}" alt="" class="ikon">
+                <div class="text">Kecskemét<br>3°C
+                    <!--align="left / <span class="narancs">align="left </span>-->
+                </div>
+                <div class="clear">&nbsp;</div>
+            </div>
+
+            <a href="http://www.met.hu/" target="_blank">Országos Időjárás <br> www.met.hu »</a><br>
+            <!--form action="javascript:void(null)" method="post" id="idojaras_form">
+                <select name="varos" class="select" onchange="xajax_weather(this.value)">						</select>
+            </form-->
+        </div>
+        <div class="sep">&nbsp;</div>
+        <div id="valuta_holder"></div>
+
+        <div class="clear">&nbsp;</div>
+    </div>
+
+    <div id="menu_holder">
+        <ul id="menu">
+            <li><a href="{{ site.url }}" id="home">&nbsp;</a></li>
+            <li><a href="{{ site.url }}{% link category/gazdasag.html %}">Gazdaság</a></li>
+            <li><a href="{{ site.url }}{% link category/kultura-tudomany.html %}">Kultúra, tudomány</a></li>
+            <li><a href="http://hunhirado.hu/?r=13">Sport, szabadidő</a></li>
+            <li><a href="http://hunhirado.hu/?r=14">Közélet, hírek</a></li>
+            <li><a href="http://hunhirado.hu/?r=15">Gasztronómia, turizmus</a></li>
+            <li><a href="http://hunhirado.hu/?r=17">Életmód, egészség</a></li>
+            <li><a href="http://hunhirado.hu/?r=16">Mezőgazdaság</a></li>
+
+            <li><a href="http://hunhirado.hu/rss.xml" target="_blank" class="kiemelt">RSS</a></li>
+        </ul>
+    </div>
+
+    <div class="vezercikk_holder">
+        {% assign post = site.categories.vezercikk[0] %}
+        <div class="vezercikk">
+            <a href="{{ post.url | absolute_url }}" class="kep">
+                <img src="{{ post.cikk_kep | relative_url }}" alt="" class="kepleft" width="250">
+            </a>
+            <h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+            {{ post.excerpt }}
+            <a href="{{ post.url | absolute_url }}" class="bovebben">Bővebben...</a>
+        </div>
+
+        <div class="sep">&nbsp;</div>
+        <div class="vezer_bannerek"><a href="http://sirha-budapest.com/" target="_blank"><img
+                src="{{ "/assets/sirha0_1~200.jpg" | relative_url }}" alt=""></a><br><br><a
+                href="http://www.agromashexpo.hu/" target="_blank"><img src="{{ "/assets/agro0_8~200.jpg" | relative_url }}"
+            alt=""></a><br><br>
+        </div>
+        <div class="sep">&nbsp;</div>
+        <div class="vezer_jobb_oldal">
+            <div class="vezer_szakacs">
+                <a href="#"><img src="{{ "/assets/vezer_szakacs.jpg" | relative_url }}" alt=""></a>
+                <b>Varga Károly</b> <br>
+                mesterszakács <br>
+                Magyar Gasztronómiai Világbajnok
+                <span>Bács-Kiskun megye szülöttje</span>
+            </div>
+            <div class="vezer_video">
+                <object width="250" height="155">
+                    <param name="movie" value="http://www.youtube.com/v/zv63ib3kufo">
+
+                    <param name="allowFullScreen" value="true">
+                    <param name="allowscriptaccess" value="always">
+                    <embed src="Hunh%C3%ADrad%C3%B3_elemei/zv63ib3kufo.swf" type="application/x-shockwave-flash"
+                           allowscriptaccess="always" allowfullscreen="true" width="266" height="155">
+                </object>
+
+            </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+    </div> <!-- vezercikk_holder -->
+
+
+    <!-- ajanlo resz -->
+    <table border="0" width="100%" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+            <td class="banners">
+                <a class="banner" href="http://hunhirado.hu/display/banner-click.php?id=740" target="bkmhirdetes">
+                    <img src="{{ "/assets/07_20130723010851.jpg" | relative_url }}" style="width:127px;" alt="" border="0">
+                </a>
+                <a class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1804" target="bkmhirdetes">
+                    <img src="{{ "/assets/08_20170822040857.png" | relative_url }}" style="width:127px;" alt="" border="0">
+                </a>
+                <a class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1808" target="bkmhirdetes">
+                    <img src="{{ "/assets/09_20171221041008.png" | relative_url }}" style="width:127px;" alt="" border="0">
+                </a>
+                <a class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1809" target="bkmhirdetes">
+                    <img src="{{ "/assets/10_20171221041038.png" | relative_url }}" style="width:127px;" alt="" border="0">
+                </a>
+                <a class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1810" target="bkmhirdetes">
+                    <img src="{{ "/assets/11_20171221041115.jpg" | relative_url }}" style="width:127px;" alt="" border="0">
+                </a>
+                <a class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1868" target="bkmhirdetes">
+                    <img src="{{ "/assets/12_20180112102048.png" | relative_url }}" style="width:127px;" alt="" border="0">
+                </a>
+                <a class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1849" target="bkmhirdetes">
+                    <img src="{{ "/assets/13_20180110025506.jpg" | relative_url }}" style="width:112px;" alt="" border="0">
+                </a>
+                <a class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1813" target="bkmhirdetes">
+                    <img src="{{ "/assets/14_20171221041258.png" | relative_url }}" style="width:127px;" alt="" border="0">
+                </a>
+                <a class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1814" target="bkmhirdetes">
+                    <img src="{{ "/assets/15_20171221041407.jpg" | relative_url }}" style="width:127px;" alt="" border="0">
+                </a>
+                <a class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1815" target="bkmhirdetes">
+                    <img src="{{ "/assets/16_20171221041634.jpg" | relative_url }}" style="width:127px;" alt="" border="0">
+                </a>
+            </td>
+
+            {{ content }}
+
+            <td class="banners"><a class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1869"
+                                   target="bkmhirdetes"><img src="{{ "/assets/17_20180115100524.png" | relative_url }}"
+                                                             style="width:127px;" alt="" border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1870" target="bkmhirdetes"><img
+                    src="{{ "/assets/18_20180115100549.gif" | relative_url }}" style="width:127px;" alt=""
+                border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1871" target="bkmhirdetes"><img
+                    src="{{ "/assets/19_20180115100616.jpg" | relative_url }}" style="width:127px;" alt=""
+                border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1877" target="bkmhirdetes"><img
+                    src="{{ "/assets/20_20180117105844.jpg" | relative_url }}" style="width:127px;" alt=""
+                border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1878" target="bkmhirdetes"><img
+                    src="{{ "/assets/21_20180117105913.jpg" | relative_url }}" style="width:127px;" alt="" border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1874" target="bkmhirdetes"><img
+                    src="{{ "/assets/22_20180115100754.png" | relative_url }}" style="width:127px;" alt="" border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1875" target="bkmhirdetes"><img
+                    src="{{ "/assets/23_20180115100821.png" | relative_url }}" style="width:127px;" alt="" border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1876" target="bkmhirdetes"><img
+                    src="{{ "/assets/24_20180115100909.png" | relative_url }}" style="width:127px;" alt="" border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1864" target="bkmhirdetes"><img
+                    src="{{ "/assets/25_20180111022007.jpg" | relative_url }}" style="width:127px;" alt="" border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1865" target="bkmhirdetes"><img
+                    src="{{ "/assets/26_20180111022037.jpg" | relative_url }}" style="width:127px;" alt=""
+                border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1866" target="bkmhirdetes"><img
+                    src="{{ "/assets/32_20180111022113.png" | relative_url }}" style="width:127px;" alt="" border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1867" target="bkmhirdetes"><img
+                    src="{{ "/assets/33_20180111022143.png" | relative_url }}" style="width:120px;" alt="" border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1839" target="bkmhirdetes"><img
+                    src="{{ "/assets/35_20180105101721.jpg" | relative_url }}" style="width:127px;" alt="" border="0"></a><a
+                    class="banner" href="http://hunhirado.hu/display/banner-click.php?id=1840" target="bkmhirdetes"><img
+                    src="{{ "/assets/36_20180105101748.jpg" | relative_url }}" style="width:127px;" alt="" border="0"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="negyed_holder">
+
+        <div class="negyed_fele_holder">
+            <div class="title">Hírek</div>
+            <div class="negyed pl0 pr12"><h3><a href="http://hunhirado.hu/?r=12&amp;c=6618">Művelődéstörténeti
+                előadássorozat indul a Várkert Bazárban</a></h3>
+                <p>Rejtélyes történelem címmel művelődéstörténeti előadássorozat indul
+                    csütörtökön a Várkert Bazárban, ahol május végéig minden hónap utolsó
+                    csütörtökén a ...</p>
+                <h3><a href="http://hunhirado.hu/?r=12&amp;c=6611">Cirkuszfesztivál</a></h3>
+                <p>Több mint tizenötezren látták a XII. Budapest Nemzetközi
+                    Cirkuszfesztivál előadásait és kísérőprogramjait, amelyeket főváros
+                    szerte több helyszínen rendeztek ...</p>
+                <h3><a href="http://hunhirado.hu/?r=14&amp;c=6608">Megnyílt Magyarország első, közvetlen
+                    terminál-összeköttetésű repülőtéri szállodája</a></h3>
+                <p>Január elején nyílt meg Magyarország első, közvetlen terminál
+                    összeköttetéssel rendelkező repülőtéri szállodája, a 145 szobás, 300
+                    ember elszállásolására ...</p></div>
+            <div class="negyed pl12"><h3><a href="http://hunhirado.hu/?r=12&amp;c=6606">Szekszárdon mutatják be a Csak
+                tiszta forrásból című gálaműsort</a></h3>
+                <p>Szekszárdon mutatják be a már többször nagy sikerrel előadott Csak
+                    tiszta forrásból című gálaműsort a magyar kultúra napján, január 22-én,
+                    az előadáson ...</p>
+                <h3><a href="http://hunhirado.hu/?r=12&amp;c=6605">Moldvai táncházzal és népzenész bállal kezdődik az év
+                    a Fonóban</a></h3>
+                <p>A Berka együttes moldvai és vonós táncházával indul az év pénteken
+                    Budapesten a Fonó Budai Zeneházban, ahol szombaton népzenész bál lesz a
+                    Heveder Zenekar ...</p>
+                <h3><a href="http://hunhirado.hu/?r=15&amp;c=6603">Kihirdették a Magyar Bor Nagydíj győzteseit</a></h3>
+                <p>Györgykovács Imre 2015-ös Nagy-Somlói Furmintja és Koch Csaba
+                    2012-es Villányi Csanád Cuvée-je nyerte el a Magyar Borszakírók Körének
+                    Magyar Bor Nagydíját.</p>
+            </div>
+            <div class="clear">&nbsp;</div>
+        </div> <!-- negyed_fele_holder -->
+
+
+        <div class="negyed_fele_holder negyed_fele_holder_right">
+            <div class="title">Ez történt a héten</div>
+            <div class="negyed pr12"><h3><a href="http://hunhirado.hu/?r=12&amp;c=6619">Kecskeméten mutatják be a
+                Seuso-kincset</a></h3>
+                <p>Kecskeméten, a Cifrapalotában mutatják be a Magyar Nemzeti Múzeum
+                    vándorkiállítását, a késő római császárkor egyik legjelentősebb ezüst
+                    leletegyüttesét, ...</p>
+                <h3><a href="http://hunhirado.hu/?r=11&amp;c=6616">Elkezdődött a berlini Nemzetközi Zöld Hét</a></h3>
+                <p>Elkezdődött pénteken Berlinben a Nemzetközi Zöld Hét
+                    (Internationale Grüne Woche - IGW), a világ legnagyobb mezőgazdasági,
+                    élelmiszeripari és kertészeti ...</p>
+                <h3><a href="http://hunhirado.hu/?r=15&amp;c=6615">Pécsi Csokoládé Karnevál</a></h3>
+                <p>Tizennyolc kiállítóval, szakmai és gyermekprogramokkal február 3-án
+                    és 4-én rendezik meg a hatodik Pécsi Csokoládé Karnevált a pécsi
+                    Zsolnay Kulturális ...</p></div>
+            <div class="negyed pl12"><h3><a href="http://hunhirado.hu/?r=12&amp;c=6612">A magyar kultúra napja</a></h3>
+                <p>Kölcsey Ferenc Himnuszának autográf kéziratát, valamint a
+                    költeményt megzenésítő Erkel Ferenc Himnusz-partitúra kéziratának
+                    eredeti példányát is megtekintheti ...</p>
+                <h3><a href="http://hunhirado.hu/?r=13&amp;c=6610">Rövidpályás gyorskorcsolya Eb</a></h3>
+                <p>Mindkét magyar váltó érmet nyert a drezdai EnergieVerbund Arenában
+                    rendezett rövidpályás gyorskorcsolya Európa-bajnokságon: a női négyes
+                    második, a férfi ...</p>
+                <h3><a href="http://hunhirado.hu/?r=12&amp;c=6607">Százötven éves a nyíregyházi Jósa András Múzeum</a>
+                </h3>
+                <p>Az idén ünnepli fennállásának 150. évfordulóját a nyíregyházi Jósa
+                    András Múzeum. Az ország egyik legrégebbi múzeuma csaknem 1 millió
+                    műtárgynak ad otthont.</p>
+            </div>
+            <div class="clear">&nbsp;</div>
+        </div> <!-- negyed_fele_holder -->
+        <div class="clear">&nbsp;</div>
+
+    </div> <!-- negyed_holder -->
+
+</div>
+
+{% include footer.html %}
+
+</body>
+
+</html>

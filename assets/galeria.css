@@ -1,0 +1,48 @@
+.galleria{list-style:none;width:468px; margin-top: 10px;}
+.galleria li{display:block;width:80px;height:80px;overflow:hidden;float:left;margin:0 10px 10px 0}
+.galleria li a {}
+.galleria li div{position:absolute;display:none;top:0;left:180px}
+.galleria li div img{cursor:pointer}
+.galleria li.active div img,.galleria li.active div{display:block}
+.galleria li img.thumb{cursor:pointer;top:auto;left:auto;display:block;width:auto;height:auto}
+.galleria li .caption{display:block;padding-top:.5em}
+.nav {text-align: center;}
+.galleria_wrapper {height: 525px;}
+* html .galleria li div span{width:550px; } /* MSIE bug */
+
+
+.galleria_wrapper { text-align: center; }
+
+.tovabb:link, .tovabb:visited {
+	background-image:url("../images/tovabb_btn.gif");
+	background-position:right center;
+	background-repeat:no-repeat;
+	color:#000000;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	line-height:18px;
+	padding-right:16px;
+}
+.tovabb:hover {
+	background-image:url("../images/tovabb_btn_h.gif");
+}
+.elozo:link, .elozo:visited {
+	background-image:url("../images/elozo_btn.jpg");
+	background-position:left center;
+	background-repeat:no-repeat;
+	color:#000000;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	line-height:18px;
+	margin-right:10px;
+	padding-left:16px;
+}
+.elozo:hover {
+	background-image:url("../images/elozo_btn_h.jpg");
+}
+
+
+
+

@@ -1,0 +1,42 @@
+---
+layout: cikk
+---
+
+<h1>{{ page.title | escape }}</h1>
+<div class="cikkinfo">
+    <div class="datum">
+        <b>Dátum:</b>
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        {{ page.date | date: date_format }}
+    </div>
+    <div class="clear">&nbsp;</div>
+</div>
+<div class="clear">&nbsp;</div>
+
+{% if page.cikk_kep %}
+<div class="cikkepbalra">
+    <a href="{{ page.cikk_kep | relative_url}}" rel="lightbox">
+        <img src="{{ page.cikk_kep | relative_url}}" width="200px" alt="" />
+    </a>
+    <div class="clear">&nbsp;</div>
+    <div class="clear">&nbsp;</div>
+</div>
+{% endif %}
+
+{{ content }}
+
+<div class="kapcsolodo_holder">
+    <div class="szurke_title">Kapcsolódó cikkek</div>
+    <div class="box_szurke"><a href="http://hunhirado.hu/index.php?r=33&c=4594" target="_balnk">Pioneer Hi-Bred
+        Magyarország Kft.</a></div>
+    <div class="box_feher"><a href="http://hunhirado.hu/index.php?r=33&c=3906" target="_balnk">HONDA Motor.Pedo Kft.</a>
+    </div>
+    <div class="box_szurke"><a href="http://hunhirado.hu/index.php?r=33&c=2425" target="_balnk">CLAAS Hungária Kft.</a>
+    </div>
+    <div class="box_feher"><a href="http://hunhirado.hu/index.php?r=33&c=1023" target="_balnk">Fiskars Magyarország</a>
+    </div>
+    <div class="box_szurke"><a href="http://www.kite.hu" target="_balnk">KITE Zrt.</a></div>
+    <div class="box_feher"><a href="http://hunhirado.hu/?r=33&c=6609" target="_balnk">Maurer Gép Kft.</a></div>
+    <div class="box_szurke"><a href="http://hunhirado.hu/?r=33&c=6613" target="_balnk">Framest Kft.</a></div>
+    <div class="box_feher"><a href="http://hunhirado.hu/?r=33&c=6617" target="_balnk">Andest Bt.</a></div>
+</div>

@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<td class="content_green">
+    <div class="box_title_cikk">
+        <ul>
+            <li><a href="/">Főoldal</a></li>
+        </ul>
+
+        <div id="cegkereso_holder">
+
+            <form action="" method="get" enctype="multipart/form-data">
+                <input type="text" name="q" id="cegprofil" value="Cég / Profil kereső" class="text"/>
+                <input type="hidden" name="r" id="" value="32"/>
+                <input type="submit" name="cegprofil_submit" id="cegprofil_submit" value="Keresés" class="submit"/>
+                <div class="clear">&nbsp;</div>
+            </form>
+
+        </div>
+
+        <div class="clear">&nbsp;</div>
+
+    </div>
+    <div class="content">
+        <div class="box_title">Ajánló</div>
+        {% for post in site.posts limit:9%}
+        <div class="box_harmad">
+            <div class="content">
+                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                <a href="{{ post.url }}" class="kep"><img src="{{ post.cikk_kep | relative_url }}" alt="" width="80px"/></a>
+                {{ post.excerpt }}
+                <a href="http://hunhirado.hu/index.php?r=33&c=4594" class="link">Pioneer Hi-Bred Magyarország Kft.</a>
+                <br/>
+            </div>
+        </div>
+        {% cycle '', '', '<div class="clear">&nbsp;</div><div class="hr">&nbsp;</div>' %}
+        {% endfor %}
+        <div class="clear">&nbsp;</div>
+        <div class="hr">&nbsp;</div>
+    </div>
+
+
+    <div class="clear">&nbsp;</div>
+    <div class="hr">&nbsp;</div>
+
+</td>

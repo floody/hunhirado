@@ -1,0 +1,22 @@
+---
+layout: cikk
+---
+<h1>{{page.title}}</h1>
+<div class="tartalom">
+    <br/>
+
+    {% for post in site.categories[page.category] %}
+    <h4><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h4>
+    <img src="{{ post.cikk_kep | relative_url }}" width="100px" alt="" class="cikkepjobbra rovatkep"/>
+    {{ post.excerpt }}
+    <div class="clear"></div>
+    <div class="hr">&nbsp;</div>
+
+    {% unless forloop.last %}<br/>{% endunless %}
+
+    {% endfor %}
+
+    <div class="clear">&nbsp;</div>
+    <div class="hr">&nbsp;</div>
+
+</div>
